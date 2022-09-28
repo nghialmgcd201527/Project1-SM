@@ -9,9 +9,9 @@ contract Advisor is Ownable {
     using SafeERC20 for IERC20;
 
     IERC20 public token;
-
-    uint256 public constant totalAllocation = 40e6 * 1e18;
-    uint256 public remainingAmount = (40e6 - (0.001 * 40e6)) * 1e18;
+    uint256 public constant totalSupply = 40e6 * 1e18;
+    uint256 public constant totalAllocation = 40e6 * 1e18 * 0.02;
+    uint256 public remainingAmount = (40e6 - (0.001 * 40e6)) * 1e18 * 0.02;
     uint256 public eachReleaseAmount = remainingAmount / 48;
     uint256 public nextTimeRelease = block.timestamp + 30 days;
     uint256 public constant releasePeriod = 30 days;
